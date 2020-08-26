@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Character encoding Unicode -->
+  <meta charset="UTF-8">
+
+  <!-- Set page width to follow screen-width of device and initial zoom when page first loaded -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+    </div>
+
+    <!-- News -->
+    <div class="row" id="news">
+      <div class="col-md-12">
+        <h3 class="heading">Latest Mars News</h3>
+        <h4>{{ mars.news_title }}</h4>
+        <p>{{ mars.news_p }}</p>
+      </div>
+    </div>
+
+
+    <div class="col-md-12">
+      <!-- Featured Image -->
+      <div class="row">
+        <div class="col-md-7">
+          <h3 class="heading">Featured Mars Image</h3>
+          <img src="{{ mars.featured_image_url }}" style="width:650px;height:650px;">
+        </div>
+
+        <!-- Facts Table -->
+        <div class="col-md-5">
+          <h4 class="heading">Mars Facts</h4>
+          <table class="table table-striped">
+            {{ mars.mars_facts | safe }}
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <h3 class="heading">Mars Hemispheres</h3>
+      <hr id="line">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="col-md-6">
+            <h4>{{ mars.title_0 }}</h4>
+            <img src="{{ mars.url_0 }}" alt="{{ mars.title_0 }}" width="400px" height="400px" align="middle" hspace="20"
+              vspace="20">
+          </div>
+          <div class=" col-md-6">
+            <div class="row">
+              <h4>{{ mars.title_1 }}</h4>
+              <img src="{{ mars.url_1 }}" alt="{{ mars.title_1 }}" width="400px" height="400px" align="middle"
+                hspace="20" vspace="20">
+            </div>
+          </div>
+        </div>
+
+        <div class=" row">
+          <div class="col-md-12">
+            <div class="col-md-6">
+              <h4>{{ mars.title_2 }}</h4>
+              <img src="{{ mars.url_2 }}" alt="{{ mars.title_2 }}" width="400px" height="400px" align="middle"
+                hspace="20" vspace="20">
+            </div>
+            <div class=" col-md-6">
+              <div class="row">
+                <h4>{{ mars.title_3 }}</h4>
+                <img src="{{ mars.url_3 }}" alt="{{ mars.title_3 }}" width="400px" height="400px" align="middle"
+                  hspace="20" vspace="20">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+
+</html>
